@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package media;
 
-service MediaLibraryService {
+service MediaSearchEngine {
   rpc SearchMovieByName (SearchMovieByNameRequest) returns (SearchMovieByNameResponse);
 }
 
