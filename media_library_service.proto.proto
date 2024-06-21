@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package media;
+
+service MediaLibraryService {
+  rpc SearchMediaByName (SearchMediaByNameRequest) returns (SearchMediaByNameResponse);
+}
+
+message SearchMediaByNameRequest {
+  string name = 1;
+}
+
+message SearchMediaByNameResponse {
+  repeated MediaItem media = 1;
+}
+
+message MediaItem {
+  string id = 1;
+  string title = 2;
+  string overview = 3;
+  string release_date = 4;
+  string poster_path = 5;
+  string backdrop_path = 6;
+  int32 popularity = 7;
+}
