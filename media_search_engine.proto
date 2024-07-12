@@ -4,7 +4,6 @@ package media;
 
 service MediaSearchEngine {
   rpc SearchMovieByName (SearchMovieByNameRequest) returns (SearchMovieByNameResponse);
-  rpc SearchSerieByName (SearchSerieByNameRequest) returns (SearchSerieByNameResponse);
 }
 
 message SearchMovieByNameRequest {
@@ -12,15 +11,7 @@ message SearchMovieByNameRequest {
 }
 
 message SearchMovieByNameResponse {
-  repeated Movie movies = 1;
-}
-
-message SearchSerieByNameRequest {
-  string name = 1;
-}
-
-message SearchSerieByNameResponse {
-  repeated Serie series = 1;
+  repeated Movie movie = 1;
 }
 
 message Movie {
@@ -31,17 +22,4 @@ message Movie {
   string posterPath = 5;
   string backdropPath = 6;
   int32 popularity = 7;
-}
-
-message Serie {
-  string id = 1;
-  string title = 2;
-  string overview = 3;
-  string startDate = 4;
-  string endDate = 5;
-  int32 runTime = 6;
-  int32 numberOfEpisodes = 7;
-  string posterPath = 8;
-  string backdropPath = 9;
-  int32 popularity = 10;
 }
