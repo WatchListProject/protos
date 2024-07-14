@@ -12,7 +12,7 @@ message SearchMovieByNameRequest {
 }
 
 message SearchMovieByNameResponse {
-  repeated Movie movie = 1;
+  repeated Movie moviesList = 1;
 }
 
 message SearchSerieByNameRequest {
@@ -20,7 +20,7 @@ message SearchSerieByNameRequest {
 }
 
 message SearchSerieByNameResponse {
-  repeated Serie series = 1;
+  repeated Serie seriesList = 1;
 }
 
 message Movie {
