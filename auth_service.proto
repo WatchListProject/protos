@@ -5,6 +5,7 @@ package auth;
 service AuthService {
   rpc Register(RegisterRequest) returns (RegisterResponse);
   rpc Login(LoginRequest) returns (LoginResponse);
+  rpc Validate(ValidateRequest) returns (ValidateResponse);
 }
 
 message RegisterRequest {
@@ -27,4 +28,13 @@ message LoginResponse {
   bool success = 1;
   optional string token = 2;
   optional string message = 3;
+}
+
+message ValidateRequest {
+  string token = 1;
+}
+
+message ValidateResponse {
+  bool valid = 1;
+  optional string message = 2;
 }
