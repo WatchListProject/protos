@@ -28,6 +28,6 @@ message AddMediaToUserResponse {
 
 message Media {
   string mediaId = 1;
-  MediaType mediaType = 2;
+  string mediaType = 2;
   bool seen = 3;
 }
