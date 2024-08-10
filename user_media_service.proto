@@ -7,6 +7,17 @@ service UserMediaService {
   rpc AddMediaToUser (AddMediaToUserRequest) returns (AddMediaToUserResponse);
 }
 
+message Media {
+  string mediaId = 1;
+  MediaType mediaType = 2;
+  bool seen = 3;
+}
+
+enum MediaType {
+  MOVIE = 0;
+  SERIE = 1;
+}
+
 message GetUserMediaListRequest {
   string userId = 1;
 }
@@ -26,13 +37,4 @@ message AddMediaToUserResponse {
   optional string message = 2;
 }
 
-message Media {
-  string mediaId = 1;
-  MediaType mediaType = 2;
-  bool seen = 3;
-}
 
-enum MediaType {
-  MOVIE = 0;
-  SERIE = 1;
-}
