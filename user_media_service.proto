@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package user;
+
+service UserMediaService {
+  rpc GetUserMediaList (GetUserMediaListRequest) returns (GetUserMediaListResponse);
+  rpc AddMediaToUser (AddMediaToUserRequest) returns (AddMediaToUserResponse);
+}
+
+message GetUserMediaListRequest {
+  string userId = 1;
+}
+
+message GetUserMediaListResponse {
+  repeated Media mediaList = 1;
+}
+
+message AddMediaToUserRequest {
+  string userId = 1;
+  string mediaId = 2;
+  mediaType mediaType = 3;
+}
+
+message AddMediaToUserResponse {
+  bool success = 1;
+  optional string message = 2;
+}
+
+message Media {
+  string mediaId = 1;
+  MediaType mediaType = 2;
+  bool seen = 3;
+}
+
+enum MediaType {
+  MOVIE = 0;
+  SERIE = 1;
+}
