@@ -5,6 +5,7 @@ package media;
 service MediaSearchEngine {
   rpc SearchMovieByName (SearchMovieByNameRequest) returns (SearchMovieByNameResponse);
   rpc SearchSerieByName (SearchSerieByNameRequest) returns (SearchSerieByNameResponse);
+  rpc GetMediaById (GetMediaByIdRequest) returns (GetMediaByIdResponse);
 }
 
 message SearchMovieByNameRequest {
@@ -21,6 +22,18 @@ message SearchSerieByNameRequest {
 
 message SearchSerieByNameResponse {
   repeated Serie seriesList = 1;
+}
+
+message GetMediaByIdRequest {
+  string id = 1;
+  string mediaType = 2;
+}
+
+message GetMediaByIdResponse {
+  oneof media {
+    Movie movie = 1;
+    Serie serie = 2;
+  }
 }
 
 message Movie {
