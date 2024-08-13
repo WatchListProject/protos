@@ -5,6 +5,8 @@ package user;
 service UserMediaService {
   rpc GetUserMediaList (GetUserMediaListRequest) returns (GetUserMediaListResponse);
   rpc AddMediaToUser (AddMediaToUserRequest) returns (AddMediaToUserResponse);
+  rpc deleteMediaFromUser (DeleteMediaFromUserRequest) returns (DeleteMediaFromUserResponse);
+  rpc setSeenStatus (SetSeenStatusRequest) returns (SetSeenStatusResponse)
 }
 
 message GetUserMediaListRequest {
@@ -26,8 +28,29 @@ message AddMediaToUserResponse {
   optional string message = 2;
 }
 
+message DeleteMediaFromUserRequest {
+  string userId = 1;
+  string mediaId = 2;
+}
+
+message DeleteMediaFromUserResponse {
+  bool success = 1;
+  optional string message = 2;
+}
+
+message SetSeenStatusRequest {
+  string userId = 1;
+  string mediaId = 2;
+  bool seenStatus = 3;
+}
+
+message SetSeenStatusResponse {
+  bool success = 1;
+  optional string message = 2;
+}
+
 message Media {
   string mediaId = 1;
   string mediaType = 2;
-  bool seen = 3;
+  bool seenStatus = 3;
 }
