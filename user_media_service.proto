@@ -6,7 +6,7 @@ service UserMediaService {
   rpc GetUserMediaList (GetUserMediaListRequest) returns (GetUserMediaListResponse);
   rpc AddMediaToUser (AddMediaToUserRequest) returns (AddMediaToUserResponse);
   rpc deleteMediaFromUser (DeleteMediaFromUserRequest) returns (DeleteMediaFromUserResponse);
-  rpc setSeenStatus (SetSeenStatusRequest) returns (SetSeenStatusResponse)
+  rpc setSeenStatus (SetSeenStatusRequest) returns (SetSeenStatusResponse);
 }
 
 message GetUserMediaListRequest {
