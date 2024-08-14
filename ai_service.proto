@@ -3,7 +3,7 @@ syntax = "proto3";
 package ai;
 
 service AIService {
-  rpc MediaRecomendation(MediaRecomendationRequest) returns (MediaRecomendationResponse);
+  rpc MediaRecommendation(MediaRecommendationRequest) returns (MediaRecommendationResponse);
 }
 
 message Media {
@@ -11,12 +11,13 @@ message Media {
     string mediaType = 2;
 }
 
-message MediaRecomendationRequest {
+message MediaRecommendationRequest {
   repeated Media mediaList = 1;
 }
 
-message MediaRecomendationResponse {
-    string recomendation = 1;
+message MediaRecommendationResponse {
+    string recommendation = 1;
+    string status = 2;
 }
 
 
