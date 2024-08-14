@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ai;
+
+service AIService {
+  rpc MediaRecomendation(MediaRecomendationRequest) returns (MediaRecomendationResponse);
+}
+
+message Media {
+    string title = 1;
+    string mediaType = 2;
+}
+
+message MediaRecomendationRequest {
+  repeated Media mediaList = 1;
+}
+
+message MediaRecomendationResponse {
+    string recomendation = 1;
+}
+
+
