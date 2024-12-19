@@ -10,7 +10,7 @@ service UserMediaService {
 }
 
 message GetUserMediaListRequest {
-  string userId = 1;
+  string email = 1;
 }
 
 message GetUserMediaListResponse {
@@ -18,7 +18,7 @@ message GetUserMediaListResponse {
 }
 
 message AddMediaToUserRequest {
-  string userId = 1;
+  string email = 1;
   string mediaId = 2;
   string mediaType = 3;
 }
@@ -29,7 +29,7 @@ message AddMediaToUserResponse {
 }
 
 message DeleteMediaFromUserRequest {
-  string userId = 1;
+  string email = 1;
   string mediaId = 2;
 }
 
@@ -39,7 +39,7 @@ message DeleteMediaFromUserResponse {
 }
 
 message SetSeenStatusRequest {
-  string userId = 1;
+  string email = 1;
   string mediaId = 2;
   bool seenStatus = 3;
 }
