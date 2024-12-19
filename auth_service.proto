@@ -6,6 +6,7 @@ service AuthService {
   rpc Register(RegisterRequest) returns (RegisterResponse);
   rpc Login(LoginRequest) returns (LoginResponse);
   rpc Validate(ValidateRequest) returns (ValidateResponse);
+  rpc ValidateWithFirebase(ValidateWithFirebaseRequest) returns (ValidateWithFirebaseResponse);
 }
 
 message RegisterRequest {
@@ -35,6 +36,15 @@ message ValidateRequest {
 }
 
 message ValidateResponse {
+  bool valid = 1;
+  optional string message = 2;
+}
+
+message ValidateWithFirebaseRequest {
+  string token = 1;
+}
+
+message ValidateWithFirebaseResponse {
   bool valid = 1;
   optional string message = 2;
 }
